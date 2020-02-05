@@ -38,3 +38,8 @@ print("GRADES COLUMN", type(grades_col))
 avg_grade =grades_col.mean()
 print("AVG GRADE:",avg_grade)
 #print ("GRADES:", type(grades))
+
+for index, row in grades.iterrows(): #iterrows allows us to loop through rows like we're in a list
+    print(index)
+    print(row["final_grade"])
+    print("-------")
