@@ -17,9 +17,24 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 print("READING GRADEBOOK CSV FILE")
+
+
+###THIS IS THE RECOMMENDED FILE PATH CONSTRUCTION
+other_csv_filepath = os.path.join(os.path.dirname(__file__), "data", "gradebook.csv")
+print("FILEPATH:", os.path.abspath(other_csv_filepath))
+
+
+
+"""
 csv_filepath = os.environ.get("CSV_FILE")
 grade_filepath = os.environ.get("GRADE_CSV_PATH")
+"""
 
-stats = pandas.read_csv(csv_filepath)
-print(stats.head())
+grades = pandas.read_csv(other_csv_filepath)
+#print(dir(type))
+print(grades.head())
+
+
+avg_grade =grades["final_grade"].mean()
+
 #print ("GRADES:", type(grades))
