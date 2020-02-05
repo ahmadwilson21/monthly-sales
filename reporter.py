@@ -33,8 +33,8 @@ grade_filepath = os.environ.get("GRADE_CSV_PATH")
 grades = pandas.read_csv(other_csv_filepath)
 #print(dir(type))
 print(grades.head())
-
-
-avg_grade =grades["final_grade"].mean()
-
+grades_col = grades["final_grade"]
+print("GRADES COLUMN", type(grades_col))
+avg_grade =grades_col.mean()
+print("AVG GRADE:",avg_grade)
 #print ("GRADES:", type(grades))
