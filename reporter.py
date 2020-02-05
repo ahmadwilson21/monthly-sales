@@ -1,4 +1,7 @@
 # reporter.py
+import pandas
+import csv
+
 
 def to_usd(my_price):
     """
