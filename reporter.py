@@ -1,6 +1,7 @@
 # reporter.py
 import pandas 
 import csv
+import statistics
 import os
 from dotenv import load_dotenv
 
@@ -43,3 +44,13 @@ for index, row in grades.iterrows(): #iterrows allows us to loop through rows li
     print(index)
     print(row["final_grade"])
     print("-------")
+
+grades_list = grades.to_dict("records") # "records" is a specific parameter of the to_dict() function, not a characteristic of the underlying data
+print(type(grades_list))
+print(type(grades_list[0]))
+print(grades_list)
+
+just_grades = [float(d["final_grade"]) for d in grades_list]
+print(just_grades[0])
+
+print("AVG GRADE", statistics.mean(just_grades))
